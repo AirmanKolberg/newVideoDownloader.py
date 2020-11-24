@@ -1,11 +1,9 @@
 from functions import *
 
-starting_video_count = check_for_updates()
+# There is obviously a lot missing,
+# But I've recently updated the way
+# I'm searching YouTube for data, so
+# I shall be continuing to update as
+# time progresses, as per usual!
 
-while True:
-    new_video_count = check_for_updates()
-    if new_video_count == starting_video_count:
-        print(f'Still {starting_video_count} videos.')
-    else:
-        print(f'There are now {new_video_count} videos!')
-        break
+check_for_updates()
