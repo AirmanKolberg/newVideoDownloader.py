@@ -1,6 +1,6 @@
 from os import system
 from googleapiclient.discovery import build
-from secret_stuff import api_key, channel_id_1
+from secret_stuff import api_key
 
 
 def bash_command(user_input):
@@ -11,17 +11,15 @@ def download_youtube_video(url):
     bash_command(f"youtube-dl '{url}'")
 
 
-def check_for_updates():
+def check_for_updates(channel_id):
     youtube = build('youtube', 'v3', developerKey=api_key)
-
-    channel_id = channel_id_1
 
     request = youtube.search().list(
         part='id',
         channelId=channel_id,
         type='video',
         order='date',
-        maxResults=1
+        maxResults=3
     )
 
     response = request.execute()
@@ -29,4 +27,4 @@ def check_for_updates():
     video_link_array = [f"https://www.youtube.com/watch?v={video['id']['videoId']}" \
                         for video in response['items']]
 
-    print(video_link_array)
+    return video_link_array[0]
