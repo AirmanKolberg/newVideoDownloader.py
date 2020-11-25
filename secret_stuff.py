@@ -3,6 +3,10 @@
 
 api_key = 'INSERT API KEY'
 
+# To find Channel IDs, visit the following page:
+# https://commentpicker.com/youtube-channel-id.php
+
+
 class Channel:
     def __init__(self, name, id):
         self.name = name
@@ -15,3 +19,6 @@ class Channel:
 
 channel_1 = Channel('Channel 1 Name', 'YouTubeID')
 channel_2 = Channel('Channel 2 Name', 'YouTubeID')
+channel_3 = Channel('Channel 3 Name', 'YouTubeID')
+
+new_video_list = []
