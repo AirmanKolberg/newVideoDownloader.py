@@ -1,6 +1,7 @@
 from os import system
 from googleapiclient.discovery import build
 from secret_stuff import api_key
+from time import sleep
 
 
 def bash_command(user_input):
@@ -8,7 +9,7 @@ def bash_command(user_input):
 
 
 def download_youtube_video(url):
-    bash_command(f"youtube-dl '{url}'")
+    bash_command(f"cd Downloads/ && youtube-dl '{url}'")
 
 
 def check_for_updates(channel_id):
@@ -28,3 +29,17 @@ def check_for_updates(channel_id):
                         for video in response['items']]
 
     return video_link_array[0]
+
+
+def check_channel(channel_name, channel_id, most_recent_url, new_vid):
+    if not new_vid:
+        new_vid_link = check_for_updates(channel_id)
+
+        if new_vid_link == most_recent_url:
+            sleep(15)
+            return False
+        else:
+            print(f'New video from {channel_name}: {new_vid_link}')
+            return True
+    else:
+        sleep(15)
