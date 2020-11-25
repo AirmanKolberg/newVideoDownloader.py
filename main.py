@@ -28,5 +28,6 @@ while not downloaded:
             downloaded = True
     elif download_request == 'no':
         print('Have a nice day!')
+        downloaded = True
     else:
         print(f'{download_request} is neither yes, nor no.  Please try again.')
