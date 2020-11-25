@@ -9,7 +9,7 @@ def bash_command(user_input):
 
 
 def download_youtube_video(url):
-    bash_command(f"cd Downloads/ && youtube-dl '{url}'")
+    bash_command(f"cd Downloads/YouTubeDownloads/ && youtube-dl '{url}'")
 
 
 def check_for_updates(channel_id):
@@ -20,12 +20,12 @@ def check_for_updates(channel_id):
         channelId=channel_id,
         type='video',
         order='date',
-        maxResults=3
+        maxResults=1
     )
 
     response = request.execute()
 
-    video_link_array = [f"https://www.youtube.com/watch?v={video['id']['videoId']}" \
+    video_link_array = [f"https://www.youtube.com/watch?v={video['id']['videoId']}"
                         for video in response['items']]
 
     return video_link_array[0]
@@ -40,6 +40,8 @@ def check_channel(channel_name, channel_id, most_recent_url, new_vid):
             return False
         else:
             print(f'New video from {channel_name}: {new_vid_link}')
+            from secret_stuff import new_video_list
+            new_video_list += new_vid_link
             return True
     else:
         sleep(600)
