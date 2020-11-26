@@ -10,3 +10,10 @@ If, for any reason, you would like to donate- though unneccesary, is always apre
 BitCoin: 3Gj49JGVPXjw3994bSebQNrHsFJkZE9iRg && Etherium: 0x08b57537943BBb6A527C9c861E9550D9Be9f7729
 
 Thank you all for reading!
+
+# Update, 26Nov2020
+It became apparent to me a couple of days ago that Google limits your requests with their YouTube API.
+You know, as if Google, the giant monopoly that does evil, despite their "do no evil" propaganda,
+couldn't afford to not limit requests for the few handful of people, probably millions at most, use
+their API on a daily basis.  So, I've increased the amount of wait time between video searches from
+10min to 15min in the file containing most of the functions.
