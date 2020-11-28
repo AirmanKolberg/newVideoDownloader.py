@@ -36,7 +36,7 @@ def check_channel(channel_name, channel_id, most_recent_url, new_vid):
         new_vid_link = check_for_updates(channel_id)
 
         if new_vid_link == most_recent_url:
-            sleep(900)
+            sleep(600)
             return False
         else:
             print(f'New video from {channel_name}: {new_vid_link}')
@@ -44,4 +44,4 @@ def check_channel(channel_name, channel_id, most_recent_url, new_vid):
             new_video_list += new_vid_link
             return True
     else:
-        sleep(900)
+        sleep(600)
