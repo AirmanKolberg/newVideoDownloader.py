@@ -17,3 +17,8 @@ You know, as if Google, the giant monopoly that does evil, despite their "do no 
 couldn't afford to not limit requests for the few handful of people, probably millions at most, use
 their API on a daily basis.  So, I've increased the amount of wait time between video searches from
 10min to 15min in the file containing most of the functions.
+
+# Update 1Dec2020
+I've just been editing around the time delay between inquiries.  5min seems reasonable to me, based
+on the number of daily requests this API limits.  However, this would also heavily depend on the
+number of channels you had the program checking, but still.  Just a minor update.
